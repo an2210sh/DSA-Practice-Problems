@@ -64,17 +64,38 @@ The die has $4$ faces, numbered $3, 6, 9, 12$. Since $15$ is not one of these fa
 
 ## Solution
 
-**Language:** Python  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T16:27:22.374Z  
+**Submitted:** 2026-10-07T16:28:27.301Z  
 
-```py
-# cook your dish here
-def check_die_roll(X, K, Y):
-    if Y % K == 0 and 1 <= Y // K <= X:
-        return "YES"
-    return "NO"
+```c_cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Optimize standard input/output streams for speed
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int X, K, Y;
+    if (cin >> X >> K >> Y) {
+        // Check if Y is a multiple of K and the corresponding face is within 1 and X
+        if (Y % K == 0) {
+            int face = Y / K;
+            if (face >= 1 && face <= X) {
+                cout << "YES\n";
+                return 0;
+            }
+        }
+        cout << "NO\n";
+    }
+
+    return 0;
+}
+
+
 ```
 
 ---
