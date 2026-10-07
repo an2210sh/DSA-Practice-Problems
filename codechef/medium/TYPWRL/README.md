@@ -62,17 +62,62 @@ abcdefghijklmnopqrstuvwxyz
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T16:29:00.419Z  
+**Submitted:** 2026-10-07T16:29:44.113Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <unordered_set>
+#include <algorithm>
+
 using namespace std;
 
-int main() {
-	// your code goes here
+void solve() {
+    int N, M;
+    cin >> N >> M;
+    string S, L;
+    cin >> S >> L;
 
+    // Use an array or unordered_set for fast lookup of left-hand keys
+    bool is_left[26] = {false};
+    for (char ch : L) {
+        is_left[ch - 'a'] = true;
+    }
+
+    int max_consecutive = 0;
+    int current_consecutive = 0;
+    char current_hand = ' '; // 'L' or 'R'
+
+    for (int i = 0; i < N; ++i) {
+        char hand = is_left[S[i] - 'a'] ? 'L' : 'R';
+
+        if (hand == current_hand) {
+            current_consecutive++;
+        } else {
+            current_hand = hand;
+            current_consecutive = 1;
+        }
+
+        max_consecutive = max(max_consecutive, current_consecutive);
+    }
+
+    cout << max_consecutive << "\n";
 }
 
+int main() {
+    // Optimize standard input/output streams for speed
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
+
+    return 0;
+}
 ```
 
 ---
