@@ -57,9 +57,9 @@ Return the  **maximum**  product of any two digits in `n`.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 2 ms (beats 18.18%)  
-**Memory:** 8.9 MB (beats 34.04%)  
-**Submitted:** 2026-11-05T19:53:34.493Z  
+**Runtime:** 3 ms (beats 11.02%)  
+**Memory:** 8.9 MB (beats 44.28%)  
+**Submitted:** 2026-11-05T19:54:22.850Z  
 
 ```cpp
 class Solution {
@@ -73,9 +73,8 @@ public:
         i++;
        }
        sort(v.begin(),v.end());//sort the values
-       int m1=v[i-1],m2=v[i-2];
+       int m1=v[i-1],m2=v[i-2];//find max 2 values of number
        return m1*m2;
-
     }
 };
 ```
