@@ -9,8 +9,7 @@ public:
         i++;
        }
        sort(v.begin(),v.end());//sort the values
-       int m1=v[i-1],m2=v[i-2];
+       int m1=v[i-1],m2=v[i-2];//find max 2 values of number
        return m1*m2;
-
     }
 };
