@@ -2,8 +2,9 @@ class Solution {
 public:
     int numberOfMatches(int n) {
         int match=1;
-        while(n>1){
-        
+        while(n/2>1){
+        if(n/2==1)
+        return match-1;
          if(n%2==0){
             match+=n/2;
             n/=2;
