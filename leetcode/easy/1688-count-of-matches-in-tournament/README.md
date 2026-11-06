@@ -49,18 +49,16 @@ Total number of matches = 7 + 3 + 2 + 1 = 13.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.7 MB  
-**Submitted:** 2026-11-06T19:03:29.532Z  
+**Runtime:** 1 ms (beats 53.16%)  
+**Memory:** 7.8 MB (beats 84.94%)  
+**Submitted:** 2026-11-06T19:06:51.097Z  
 
 ```cpp
 class Solution {
 public:
     int numberOfMatches(int n) {
-        int match=1;
-        while(n/2>1){
-        if(n/2==1)
-        return match-1;
+        int match=0;
+        while(n>1){
          if(n%2==0){
             match+=n/2;
             n/=2;
